@@ -11,7 +11,8 @@ app.get('/', function (req, res) {
 
 
 app.get('/picture', function (req, res) {
-  res.send('<html><body><img src="pic.jpg"/></body></html>')
+  var fileToSend = "pic.jpg";
+  res.sendfile(fileToSend, {root: './'}); // Files inside "public" folder
 })
 
 
